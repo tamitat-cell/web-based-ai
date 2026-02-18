@@ -108,3 +108,4 @@ sr.reveal('.about__content , .contact__content' , { origin:'bottom'})
 sr.reveal('.about__image .contact__form' , {delay:300})
 
 sr.reveal('.project__card' , {interval:100})
+//last update
