@@ -46,7 +46,7 @@ const sendEmail = (e) =>{
      //serviceId ~ templateId ~ publicKey
        emailjs.sendForm('service_j57m1us','template_l11stzm','#contact-form','zUV29kRvV-6SQx3mz')
 .then(() => {
-    contactMessage.textContent = 'Message sent successfully!';
+    contactMessage.textContent = ' Message not sent (service error) ❌';
 
     setTimeout(() =>{
         contactForm.contactMessage.textContent=''
@@ -63,3 +63,48 @@ const sendEmail = (e) =>{
 
 }
 contactForm.addEventListener('submit', sendEmail);
+const scrollUp = ()=>{
+    const scrollUp = document.getElementById('scroll-up')
+
+    this.scrollY>= 350 ? scrollUp.classList.add('show-scroll')
+                       : scrollUp.classList.remove('show-scroll')
+
+}
+window.addEventListener('scroll',scrollUp)
+
+const sections =document.querySelectorAll('section[id]')
+
+const scrollActive = () => {
+    const scrollDown = window.scrollY
+
+    sections.forEach(current => {
+        const sectionHeight = current.offsetHeight,
+              sectionTop = current.offsetTop - 58,
+              sectionId = current.getAttribute('id'), // You defined it here correctly
+              // Fixed the typo below (sectonId -> sectionId)
+              sectionClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
+        
+        if(sectionClass){
+            if(scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight){
+                sectionClass.classList.add('active-link')
+            }else{
+                sectionClass.classList.remove('active-link')
+            }
+        }
+    })
+}
+window.addEventListener('scroll', scrollActive)
+
+const sr = scrollreveal({
+    origin:'top',
+    distance:'60px',
+    duration:2000,
+
+})
+sr.reveal('.home__content .resume__content:nth-child(1) ,.footer__container')
+sr.reveal('.home__data, .resume__content:nth-child(2)' , {delay:300, origin:'bottom'})
+
+sr.reveal('.about__content , .contact__content' , { origin:'bottom'})
+sr.reveal('.about__image .contact__form' , {delay:300})
+
+sr.reveal('.project__card' , {interval:100})
