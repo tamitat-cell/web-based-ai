@@ -528,6 +528,7 @@ transition:opacity .4s;
 
 }
 .footer__links{
+
     column-gap: 2rem;
 }
 .footer__links{
@@ -548,12 +549,12 @@ transition:opacity .4s;
 .footer__social-link:hover{
     transform: translateY(-.25rem);
 }
-.footetr__copy{
+.footer__copy{
     display: block;
     margin-top: 5rem;
     text-align: center;
     font-size: var(--small-font-size);
-    color:var(--gray-color);
+    color: var(--gray-color);
 }
 
 ::-webkit-scrollbar{

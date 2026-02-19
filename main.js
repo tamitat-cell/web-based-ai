@@ -46,14 +46,14 @@ const sendEmail = (e) =>{
      //serviceId ~ templateId ~ publicKey
        emailjs.sendForm('service_j57m1us','template_l11stzm','#contact-form','zUV29kRvV-6SQx3mz')
 .then(() => {
-    contactMessage.textContent = ' Message not sent (service error) ❌';
+    contactMessage.textContent = ' Message sent successfully ✅';
 
     setTimeout(() =>{
         contactForm.contactMessage.textContent=''
     },5000)
     contactForm.reset()
 }, ()=>{
-    contactMessage.textContent='Message not sent (service error)'
+    contactMessage.textContent='Message not sent (service error) ❌'
 
 })
 .catch((error) => {
