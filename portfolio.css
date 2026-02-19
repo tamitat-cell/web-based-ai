@@ -339,7 +339,7 @@ active-link::after{
     align-items:flex-end;
     justify-content: center;
     justify-self: center;
-    box-shadow:0 8ox 32px hsl(var(--hue),80%,48% ,.3));
+    box-shadow:0 8ox 32px hsl(var(--hue),80%,48% ,.3);
 }
 .about__img{
     width: 200px;
