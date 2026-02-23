@@ -399,7 +399,7 @@ transition:opacity .4s;
 .resume__content{
     row-gap:1rem;
 }
-//new message
+
 .resume__subtitle{
     display:flex;
     align-items:center; 
