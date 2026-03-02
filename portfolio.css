@@ -479,14 +479,15 @@ transition: transform .4s;
   margin-top: .5rem;
 }
 
-.projects__card:hover
- .projects__description,
+.projects__card:hover,
+ .projects__description
 {
   
   visibility: visible;
   box-shadow: 0 8px 16px hsla(var(--hue), 80%, 48%, .2);
 }
-.projects__card:hover .projects__data{
+.projects__card:hover,
+.projects__data{
   opacity: 1;
   pointer-events: initial;
 }
