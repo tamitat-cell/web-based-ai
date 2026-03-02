@@ -479,7 +479,8 @@ transition: transform .4s;
   margin-top: .5rem;
 }
 
-.projects__card:hover .projects__description,
+.projects__card:hover
+ .projects__description,
 {
   
   visibility: visible;
