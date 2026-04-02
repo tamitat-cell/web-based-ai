@@ -72,6 +72,37 @@ const scrollUp = ()=>{
 }
 window.addEventListener('scroll',scrollUp)
 
+/* Day/Night mode toggle */
+const themeToggle = document.getElementById('theme-toggle');
+const themeIcon = document.getElementById('theme-icon');
+const lightTheme = 'light-theme';
+const iconSun = 'ri-sun-line';
+const iconMoon = 'ri-moon-line';
+
+// Load saved theme
+const savedTheme = localStorage.getItem('selected-theme');
+const savedIcon = localStorage.getItem('selected-icon');
+
+if(savedTheme){
+    document.body.classList[savedTheme === 'light' ? 'add' : 'remove'](lightTheme);
+    themeIcon.classList[savedIcon === iconSun ? 'add' : 'remove'](iconSun);
+    themeIcon.classList[savedIcon === iconSun ? 'remove' : 'add'](iconMoon);
+}
+
+const getCurrentTheme = () => document.body.classList.contains(lightTheme) ? 'light' : 'dark';
+const getCurrentIcon = () => themeIcon.classList.contains(iconSun) ? iconSun : iconMoon;
+
+themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle(lightTheme);
+    if(themeIcon.classList.contains(iconSun)){
+        themeIcon.classList.replace(iconSun, iconMoon);
+    } else {
+        themeIcon.classList.replace(iconMoon, iconSun);
+    }
+    localStorage.setItem('selected-theme', getCurrentTheme());
+    localStorage.setItem('selected-icon', getCurrentIcon());
+});
+
 const sections =document.querySelectorAll('section[id]')
 
 const scrollActive = () => {
